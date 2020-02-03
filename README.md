@@ -16,10 +16,10 @@ II. Classes
 9) Male happy
 10) Male sad
 
-
 III. DataSet
 
-	The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) contains 7356 files (total size: 24.8 GB). Out of speech and song we have used speech dataset.  The database contains 24 professional actors (12 female, 12 male), vocalizing two lexically-matched statements in a neutral North American accent. Speech includes calm, happy, sad, angry, fearful, surprise, and disgust expressions. Each expression is produced at two levels of emotional intensity (normal, strong), with an additional neutral expression. We have used Audio-only (16bit,48kHz) data. Speech file (Audio_Speech_Actors_01-24.zip, 215 MB) contains 1440 files: 60 trials per actor x 24 actors = 1440. Out of 8 emotions we have chosen calm, happy, sad, angry, fearful emotions from dataset for classification i.e. 960 samples. More details about the dataset can be found on https://zenodo.org/record/1188976#.XZGV6ffhUl8
+	The Ryerson Audio-Visual Database of Emotional Speech and Song (RAVDESS) contains 7356 files (total size: 24.8 GB). Out of speech and song we have used speech dataset.  The database contains 24 professional actors (12 female, 12 male), vocalizing two lexically-matched statements in a neutral North American accent. Speech includes calm, happy, sad, angry, fearful, surprise, and disgust expressions. Each expression is produced at two levels of emotional intensity (normal, strong), with an additional neutral expression. We have used Audio-only (16bit,48kHz) data. Speech file (Audio_Speech_Actors_01-24.zip, 215 MB) contains 1440 files: 60 trials per actor x 24 actors = 1440. Out of 8 emotions we have chosen calm, happy, sad, angry, fearful emotions from dataset for classification i.e. 960 samples.
+		
 
 IV. Speech file loading parameters
 
@@ -32,12 +32,7 @@ We have experimented with different hop lengths and sampling rates. The chosen h
 
 V. Requirements
 
-python 3.6.7
-tensorflow 1.14.0
-librosa 0.6.3
-matplotlib 3.0.3
-keras 2.2.4
-sklearn 0.21.3
+python | tensorflow | librosa | matplotlib | keras | sklearn 
 
 VI. Feature
 
@@ -53,4 +48,20 @@ Steps to find MFCC:
 VII. Exploratory Data Analysis (EDA)
 1) Waveform plot for  speech sample
 
+![Waveform of random sample](https://github.com/dhanashrikale/Acoustic-Sentiment-Analysis/blob/master/waveform.png)
 
+2) Scaled MFCC (13x216)
+Number of nMFCC coefficients=13
+Number of frames=216
+
+![Intercluster distance between emotions](https://github.com/dhanashrikale/Acoustic-Sentiment-Analysis/blob/master/intercluster_distance.png)
+
+3)CNN result
+
+![CNN result](https://github.com/dhanashrikale/Acoustic-Sentiment-Analysis/blob/master/results.png)
+
+We have also tested MFCC with MLP and LSTM but CNN gave better performance than both of them. 
+
+Below Flowchart shows the overall flow of EDA and use cases presented to customer
+
+![sentiment analysis](https://github.com/dhanashrikale/Acoustic-Sentiment-Analysis/blob/master/sentiment_analysis.png)
